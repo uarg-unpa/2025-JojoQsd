@@ -22,9 +22,13 @@ public class Test_Elector {
         int Clase = sc.nextInt();
 
         System.out.println("Ingrese el Domicilio");
-        String Domicilio = sc.nextLine();
+        System.out.println("Calle:");
+        String Calle = sc.nextLine();
+        System.out.println("Altura:");
+        int Altura = sc.nextInt();
+        Domicilio domicilio = new Domicilio(Calle, Altura);
 
-        electores[i] = new Elector(nombre, Apellido, Matricula, Clase, Domicilio);
+        electores[i] = new Elector(nombre, Apellido, Matricula, Clase, domicilio);
 
        }
 
@@ -86,9 +90,13 @@ public class Test_Elector {
 
                      case 5:
                      System.out.println("Ingrese el Domicilio a cambiar");
-                    String Domicilio = sc.nextLine();
-                    electorAModificar.setDomicilio(Domicilio);
-                    break;
+                     System.out.println("Ingrese la nueva calle:");
+                     String Calle = sc.nextLine();
+                     System.out.println("Ingrese la nueva Altura:");
+                     int Altura = sc.nextInt();
+                     Domicilio nuevoDomicilio = new Domicilio(Calle, Altura);
+                     electorAModificar.setDomicilio(nuevoDomicilio);
+                     break;
 
                      case 0:
                      break;

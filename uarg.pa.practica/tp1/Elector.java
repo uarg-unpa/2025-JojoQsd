@@ -1,16 +1,17 @@
+
 public class Elector {
     String nombre;
     String Apellido;
     int Matricula;
     int Clase;
-    String Domicilio;
+    Domicilio domicilio;
 
-    public Elector(String nombre, String Apellido, int Matricula, int Clase, String Domicilio){
+    public Elector(String nombre, String Apellido, int Matricula, int Clase, Domicilio domicilio){
         this.nombre = nombre;
         this.Apellido = Apellido;
         this.Matricula = Matricula;
         this.Clase = Clase;
-        this.Domicilio = Domicilio;
+        this.domicilio = domicilio;
     }
 
     public void setnombre(String nombre){
@@ -41,14 +42,18 @@ public class Elector {
         return this.Clase;
     }
 
-     public void setDomicilio(String Domicilio){
-        this.Domicilio = Domicilio;
-    }
-    public String getDomicilio(){
-        return this.Domicilio;
+    public void setDomicilio(Domicilio domicilio) {
+        this.domicilio = domicilio;
     }
 
+    public Domicilio getDomicilio() {
+        return domicilio;
+    }
+
+
+
+
     public String toString(){
-        return "["+ this.nombre + "]" +  "["+ this.Apellido + "]" + "["+ this.Matricula + "]" +  "["+ this.Clase + "]" + "["+ this.Domicilio + "]";
+        return "["+ this.nombre + "]" +  "["+ this.Apellido + "]" + "["+ this.Matricula + "]" +  "["+ this.Clase + "]" + "[" + this.domicilio + "]";
     }
 }
