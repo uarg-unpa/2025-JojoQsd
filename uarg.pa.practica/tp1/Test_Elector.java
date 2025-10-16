@@ -91,10 +91,13 @@ public class Test_Elector {
                      case 5:
                      System.out.println("Ingrese el Domicilio a cambiar");
                      System.out.println("Ingrese la nueva calle:");
-                     String Calle = sc.nextLine();
+                     String NueCalle = sc.nextLine();
+                     if (electores[seleccion].domicilio.mismaCalle()){
+                        System.out.println("La nueva calle ingresada coincide con la Previamente almacenada. Se modificara solo la altura.");
+                     }
                      System.out.println("Ingrese la nueva Altura:");
                      int Altura = sc.nextInt();
-                     Domicilio nuevoDomicilio = new Domicilio(Calle, Altura);
+                     Domicilio nuevoDomicilio = new Domicilio(NueCalle, Altura);
                      electorAModificar.setDomicilio(nuevoDomicilio);
                      break;
 
