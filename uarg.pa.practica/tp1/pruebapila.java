@@ -3,6 +3,7 @@ public class pruebapila {
     public int[] elementos;
     public int cima;
     public int contOcurr=0;
+    public int aux;
 
     public pruebapila() {
         elementos = new int[maxpila];
@@ -23,7 +24,7 @@ public class pruebapila {
     }
 
     public int sacar(){
-        int aux=elementos[cima];
+        aux=elementos[cima];
         cima=cima -1;
         return aux;
     }

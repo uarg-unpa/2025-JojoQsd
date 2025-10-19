@@ -5,6 +5,7 @@ public class Ocurrencias {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         pruebapila pila = new pruebapila();
+        pruebapila pilaaux = new pruebapila();
         int opc;
 
         do {
@@ -30,6 +31,7 @@ public class Ocurrencias {
 
                 case 2:
                 if (!pila.estaVacia()){
+                    System.out.println("Se saco el elemento:"+pila.elementos[pila.cima]);
                     pila.sacar();
                 }
                 else {
@@ -41,9 +43,15 @@ public class Ocurrencias {
                     System.out.println("Ingrese el elemento a buscar:");
                     int ele = sc.nextInt();
                     for (int i =0; i<pila.cima; i++){
-                    if (pila.elementos[i] == ele){
+                        pila.sacar();
+                    if (pila.aux == ele){
                         pila.cantOcurrencias();
                     }
+                    pilaaux.meter(pila.aux); //armar la pila auxiliar con cada elemento que se saca de la original
+                }
+                for (int i=0; i<pilaaux.cima; i++){
+                    pilaaux.sacar();
+                    pila.meter(pilaaux.aux);  //restaurar la pila original
                 }
                 System.out.println("El elemento se encontro" + pila.contOcurr + "veces en la pila");
             }
