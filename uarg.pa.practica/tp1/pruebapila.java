@@ -2,7 +2,7 @@ public class pruebapila {
     public final int maxpila=10;
     public int[] elementos;
     public int cima;
-    public int contOcurr=0;
+    public int contOcurr;
     public int aux;
 
     public pruebapila() {
@@ -29,8 +29,20 @@ public class pruebapila {
         return aux;
     }
 
-    public int cantOcurrencias(){
-        contOcurr ++;
+    public int cantOcurrencias(int ele){
+        contOcurr = 0;
+        pruebapila pilaAux = new pruebapila();
+            for (int i = 0; i < cima; i++) {
+        sacar();
+        if (aux == ele) {
+            contOcurr ++;
+        }
+        pilaAux.meter(aux);
+    }
+    while(!pilaAux.estaVacia()){
+        meter(pilaAux.sacar());
+    }
+
         return contOcurr;
     }
 }

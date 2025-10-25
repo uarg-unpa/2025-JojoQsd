@@ -24,43 +24,38 @@ public class Ocurrencias {
                     int e = sc.nextInt();
                     pila.meter(e);
                     System.out.println("Se añadio el elemento");
+                    break;
                 }
                 else {
                     System.out.println("La pila ya esta llena");
+                    break;
                 }
 
                 case 2:
                 if (!pila.estaVacia()){
-                    System.out.println("Se saco el elemento:"+pila.elementos[pila.cima]);
                     pila.sacar();
+                    System.out.println("Se saco el elemento:"+pila.aux);
+                    break;
                 }
                 else {
                     System.out.println("La pila ya esta vacia");
+                    break;
                 }
 
                 case 3:
                 if (!pila.estaVacia()){
                     System.out.println("Ingrese el elemento a buscar:");
                     int ele = sc.nextInt();
-                    for (int i =0; i<pila.cima; i++){
-                        pila.sacar();
-                    if (pila.aux == ele){
-                        pila.cantOcurrencias();
-                    }
-                    pilaaux.meter(pila.aux); //armar la pila auxiliar con cada elemento que se saca de la original
+                    pila.cantOcurrencias(ele);
                 }
-                for (int i=0; i<pilaaux.cima; i++){
-                    pilaaux.sacar();
-                    pila.meter(pilaaux.aux);  //restaurar la pila original
-                }
+                
                 System.out.println("El elemento se encontro" + pila.contOcurr + "veces en la pila");
-            }
-                case 0:
                 break;
-        }
+            }
+
+        }while (opc!=0);
+        sc.close();
     }
-    while (opc!=0);
-    sc.close();
 }
-}
+
 
