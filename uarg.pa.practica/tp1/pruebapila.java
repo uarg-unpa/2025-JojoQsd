@@ -45,4 +45,23 @@ public class pruebapila {
 
         return contOcurr;
     }
+
+    public int suprEle(int ele){
+        int contMov = 0;
+        pruebapila pilaAux = new pruebapila();
+        while (!estaVacia()){
+            sacar();
+            if (aux != ele){
+            pilaAux.meter(aux);
+            contMov ++;
+            }
+            else {
+                return contMov;
+            }
+        }
+        while(!pilaAux.estaVacia()){
+           meter(pilaAux.sacar());
+    }
+    return contMov;
+}
 }
