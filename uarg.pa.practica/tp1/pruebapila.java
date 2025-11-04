@@ -32,7 +32,7 @@ public class pruebapila {
     public int cantOcurrencias(int ele){
         contOcurr = 0;
         pruebapila pilaAux = new pruebapila();
-            for (int i = 0; i < cima; i++) {
+            while (!estaVacia()) {
         sacar();
         if (aux == ele) {
             contOcurr ++;

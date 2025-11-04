@@ -29,36 +29,33 @@ public class ReproductorMain {
                 temaMusical cancion = new temaMusical(nombre, Interprete, genero, año);
                 if (!MP.estaLlena()){
                     MP.agregar(cancion);
-                    break;
                 }
                 else {
                     System.out.println("La lista de reproduccion esta llena.");
-                    break;
                 }
+                break;
 
                 case 2:
                 if (!MP.estaVacia()) {
                     temaMusical aux = MP.reproducirSig();
                     MPaux.agregar(aux);
                     System.out.println("Ahora reproduciendo: " + aux.toString());
-                    break;
                 }
                 else {
                     System.out.println("Error, la lista esta vacia.");
-                    break;
                 }
+                break;
 
                 case 3:
                 if(!MPaux.estaVacia()) {
                     temaMusical aux = MPaux.reproducirSig();
                     MP.agregar(aux);
-                    System.out.println("Ahora reproduciendo: " + aux.toString());
-                    break;
+                    System.out.println("Ahora reproduciendo: " + aux);
                 }
                 else {
                     System.out.println("Error, no hay cancion a la cual volver.");
-                    break;
                 }
+                break;
 
                 case 0:
                 break;
